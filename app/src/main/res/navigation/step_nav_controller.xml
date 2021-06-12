@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/step_nav_controller"
+    app:startDestination="@id/slidingStepFragment">
+
+    <fragment
+        android:id="@+id/slidingStepFragment"
+        android:name="com.arvatel.physicsexperiment.experiments.sliding_on_an_incline.SlidingStepFragment"
+        android:label="fragment_sliding_step"
+        tools:layout="@layout/fragment_sliding_step" />
+</navigation>
