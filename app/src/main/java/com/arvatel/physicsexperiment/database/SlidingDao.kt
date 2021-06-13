@@ -1,19 +1,21 @@
 package com.arvatel.physicsexperiment.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 
+// Coroutines for DB
+// Each one is a function for accessing the DB
 @Dao
 interface SlidingDao {
-    @Insert
-    fun insertAll(vararg sliding: SlidingEntity)
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(sliding: SlidingEntity)
 
     @Delete
-    fun delete(sliding: SlidingEntity)
+    suspend fun delete(sliding: SlidingEntity)
 
-    @Query("SELECT * FROM sliding")
-    fun getAll(): List<SlidingEntity>
+    @Query("SELECT * FROM sliding WHERE horizontal_tilt = :hTilt")
+    suspend fun getByHorizontalTilt(hTilt : Int): List<SlidingEntity>
+
+    @Query("SELECT * FROM sliding WHERE id = :id")
+    suspend fun getById(id : Int): List<SlidingEntity>
 }
