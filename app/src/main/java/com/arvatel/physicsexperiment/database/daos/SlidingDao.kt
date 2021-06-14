@@ -1,6 +1,7 @@
-package com.arvatel.physicsexperiment.database
+package com.arvatel.physicsexperiment.database.daos
 
 import androidx.room.*
+import com.arvatel.physicsexperiment.database.entities.SlidingEntity
 
 
 // Coroutines for DB

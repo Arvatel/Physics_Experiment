@@ -1,4 +1,4 @@
-package com.arvatel.physicsexperiment.database
+package com.arvatel.physicsexperiment.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

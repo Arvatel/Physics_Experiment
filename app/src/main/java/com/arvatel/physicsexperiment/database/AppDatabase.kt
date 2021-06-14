@@ -4,8 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.arvatel.physicsexperiment.database.SlidingEntity
+import com.arvatel.physicsexperiment.database.daos.SlidingDao
+import com.arvatel.physicsexperiment.database.entities.SlidingEntity
 
+
+// Example how to work with database
+//val dao : SlidingDao = AppDatabase.getInstance(this).slidingDao
+//
+//val entity = SlidingEntity(0, 0, 0, 0, "brom")
+//
+//lifecycleScope.launch {
+//    dao.insertAll(entity)
+//}
 
 @Database (
     entities = [SlidingEntity::class],
@@ -30,7 +40,5 @@ abstract class AppDatabase : RoomDatabase() {
                 }
             }
         }
-
     }
-
 }
